@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/style.css" />
     <title>Vue Gadget Shop</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    <h1>Vue Gadget Shop</h1>
-    <p>Découvrez les derniers gadgets électroniques de hautes technologies !</p>
+    <div id="app">
+      <h1>Vue Gadget Shop</h1>
+      <p>
+        Découvrez les derniers gadgets électroniques de hautes technologies !
+      </p>
+      <panier :carts="carts"></panier>
+      <gadget @add-to-cart="addCartMain"></gadget>
+    </div>
+    <script src="./main.js"></script>
+    <script src="./components/pannier.js"></script>
+    <script src="./components/gadget.js"></script>
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount("#app");
+    </script>
   </body>
 </html>
